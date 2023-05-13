@@ -7,7 +7,7 @@ This project contains a simple example of packaging items and publishing to a pr
     3. Docker enabled.
     4. Runs dependabot on a cron job to check for any old packages that require updating. 
 
-#Contributors
+# Contributors
 
 - Kiran Jagathal (Owner) :sunglasses:
 - Bobbi Jaann (Someone) :hankey:
