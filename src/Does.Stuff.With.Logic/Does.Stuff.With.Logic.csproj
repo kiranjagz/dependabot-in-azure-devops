@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Authors>Bobbi Force</Authors>
+		<Company>Galactic Fishermen</Company>
+		<Description>This does some top stuff.</Description>
+		<Product>$(AssemblyName)</Product>
+		<PackageProjectUrl>https://galacticfisherman.co.za/</PackageProjectUrl>
+		<RepositoryUrl>https://dev.azure.com/kiranjagz/Bobbi-Force/_git/nuget-for-nuggets</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<Version>2.6.0</Version>
+		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+	</PropertyGroup>
+
+	<Target DependsOnTargets="ResolveReferences" Name="CopyProjectReferencesToPackage">
+		<ItemGroup>
+			<BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
+		</ItemGroup>
+	</Target>
+
+</Project>
